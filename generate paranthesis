@@ -1,0 +1,30 @@
+class Solution {
+        public void Helper(List<String>ans,String temp,int a,int b)
+        {
+                
+                if(a==0 && b==0)
+                {
+                         ans.add(temp);
+                        return;
+                }
+                 if(a!=0)
+                        Helper(ans,temp+"(",a-1,b);
+        if(b>a)
+        Helper(ans,temp+")",a,b-1);
+          
+        }
+        
+        
+        
+        
+    public List<String> generateParenthesis(int n) {
+        List<String>ans=new ArrayList<>();
+            String temp="(";
+            int a=n-1;
+            int b=n;
+            Helper(ans,temp,a,b);
+            
+            return ans;
+            
+    }
+}
